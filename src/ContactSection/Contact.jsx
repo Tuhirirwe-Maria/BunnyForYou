@@ -13,7 +13,7 @@ function contact() {
  
     return (
         <div className="contact">
-            <button className="button">Get in Touch</button>
+            <button className="contact_button">Get in Touch</button>
             <div className="icons">
               <FaFacebook className="icon"/>
               <FaLinkedinIn className="icon" />

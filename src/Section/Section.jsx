@@ -2,83 +2,55 @@ import React from 'react'
 
 import TitleBar from "./TitleBar"
 import Card from "./Card"
+import { bunnyListMeat, bunnyListFur, bunnyListPet } from "./card"
 
 import "./Section.css"
 
-function Section() {
+export default function Section() {
+  const bunnyMeat =  bunnyListMeat.map((item, key) =>(
+   
+    <Card
+      key={item.id}
+      image={item.image}
+      text={item.text}
+      price={item.price}
+    />
+  ));
+  const bunnyFur =  bunnyListFur.map((item, key) =>(
+   
+    <Card
+      key={item.id}
+      image={item.image}
+      text={item.text}
+      price={item.price}
+    />
+  ));
+  const bunnyPet =  bunnyListPet.map((item, key) =>(
+   
+    <Card
+      key={item.id}
+      image={item.image}
+      text={item.text}
+      price={item.price}
+    />
+  ));
     return (
         <div className="section">
-            <TitleBar  text="Great for meat"/>
-            <div className="card_section">
-            <Card
-              image="/Images/Chinchilla.jpg"
-              text="Chinchilla"
-              price="$60"
-            />
-              <Card
-              image="/Images/New Zealand.jpg"
-              text="New Zealand"
-              price="$55"
-            />
-              <Card
-              image="/Images/Californian.jpg"
-              text="Californian"
-              price="$65"
-            />
-              <Card
-              image="/Images/Chinchilla.jpg"
-              text="Palomino"
-              price="$70"
-            />
+          <TitleBar title="Great for Meat"/>
+          <div className="card_section">  
+            {bunnyMeat}
+           </div>
+           <TitleBar title="Great for Fur"/>
+           <div className="card_section">
+            {bunnyFur}
             </div>
-            <TitleBar text="Great for fur"/>
-            <div className="card_section">
-            <Card
-              image="/Images/german angora.jfif"
-              text="German Angora"
-              price="$40"
-            />
-              <Card
-              image="/Images/giant angora.jfif"
-              text="Giant Angora"
-              price="$40"
-            />
-              <Card
-              image="/Images/Jersey-Wooly.jpg"
-              text="Jersey-Wooly"
-              price="$40"
-            />
-              <Card
-              image="/Images/American-Fuzzy-Lop-Rabbit-1.jpg"
-              text="American-Fuzzy-Lop-Rabbit"
-              price="$40"
-            />
+            <TitleBar title="Great as Pets"/>
+           <div className="card_section">
+            {bunnyPet}
             </div>
-            <TitleBar text="Great as pets"/>
-            <div className="card_section">
-            <Card
-              image="/Images/Holland Lop.jpg"
-              text="Holland Lop"
-              price="$40"
-            />
-              <Card
-              image="/Images/dwarfhotot.png"
-              text="Dwarfhotot"
-              price="$40"
-            />
-              <Card
-              image="/Images/mini lop.jpg"
-              text="Mini Lop"
-              price="$40"
-            />
-              <Card
-              image="/Images/mini-lop.jpg"
-              text="Mini Lop "
-              price="$40"
-            />
-            </div>
-        </div>
-    )
+         
+          </div>
+        
+    );
 }
 
-export default Section
